@@ -20,8 +20,36 @@ module.exports = {
       test:/\.ts$/,
       exclude:/node_modules/,
       use:[{
+        loader:'babel-loader',
+        options:{
+          presets:['@babel/preset-env']
+        }
+      },{
         loader:'ts-loader'
       }]
+    },{
+      test:/\.less$/,
+      exclude:/node_modules/,
+      use:[
+        'style-loader',
+        'css-loader',
+        {
+          loader:'postcss-loader',
+          options:{
+            postcssOptions:{
+              plugins:[
+                [
+                  'postcss-preset-env',
+                  {
+                    browsers:'last 2 versions'
+                  }
+                ]
+              ]
+            }
+          }
+        },
+        'less-loader'
+      ]
     }]
   },
   plugins:[new HTMLWebpackPlugin({
