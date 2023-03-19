@@ -19,8 +19,11 @@
   width: 304px;
   height: 304px;
   border: 2px solid #000;
+  position: relative;
 }
 #stage #snake > div {
+  position: absolute;
+  z-index: 1;
   width: 10px;
   height: 10px;
   background-color: #000;
@@ -37,4 +40,5 @@
   position: absolute;
   top: 10px;
   left: 10px;
+  background: #ccc;
 }

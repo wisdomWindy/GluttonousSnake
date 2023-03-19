@@ -1,17 +1,5 @@
 import './styles/reset.less';
+import GameController from './modules/GameController';
 
-class Food{
-  element:HTMLElement;
+let gm = new GameController();
 
-  constructor(){
-    this.element = document.getElementById('food');
-  }
-
-  get X(){
-    return this.element.offsetLeft;
-  }
-
-  get Y(){
-    return this.element.offsetTop;
-  }
-}
